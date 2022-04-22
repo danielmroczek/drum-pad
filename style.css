@@ -46,7 +46,8 @@ section.pads .pad {
     justify-content: center;  
 }
 
-section.pads div.pad:active {
+section.pads div.pad:active,
+section.pads div.pad.active {
     
     background: tomato;
 
