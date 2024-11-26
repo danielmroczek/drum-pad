@@ -11,12 +11,11 @@ Try it now: [Online Drumpad](https://pan-danio.github.io/drumpad/)
 - 🎵 16 high-quality drum samples
 - ⌨️ Keyboard mapping for quick access
 - 📱 Touch-enabled for mobile devices
-- 🔊 Professional sound engine using Howler.js
-- 🎛️ Multiple sounds per pad (kick, snare, hi-hat variants)
 - ⚡ Low latency playback
 - 📱 Responsive design
 - 🖱️ Mouse and touch support
 - 🎨 Clean, minimalist interface
+- 🌓 Dark/Light theme support
 
 ## 🛠️ Tech Stack
 
