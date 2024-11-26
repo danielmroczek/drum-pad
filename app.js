@@ -1,65 +1,64 @@
-window.addEventListener('load', () => {
-    new DrumPad();
+import "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js";
+
+window.addEventListener("DOMContentLoaded", () => {
+  new DrumPad();
 });
 
 class DrumPad {
-    constructor() {
-        this.drumset = 'lm1';
-        this.pads = [...document.querySelectorAll('section.pads .pad')];
-        this.initializeSamples();
-        this.addPadHooks();
-        this.addKeyboardHooks();
-    }
+  drumset = "lm1";
+  pads = [...document.querySelectorAll("section.pads .pad")];
 
-    initializeSamples() {
-        this.pads.forEach(pad => {
-            pad.howl = new Howl({
-                src: [`samples/${this.drumset}/${pad.dataset.sound}.wav`]
-            });
-        })
-    }
+  constructor() {
+    this.initializeSamples();
+    this.addPadHooks();
+    this.addKeyboardHooks();
+  }
 
-    addPadHooks() {
-        this.pads.forEach(pad => {
-            if ('ontouchstart' in document.documentElement) {
-                pad.addEventListener('touchstart', this.playSample);
-            } else {
-                pad.addEventListener('mousedown', this.playSample);
-            }
-            
-        });
-    }
+  initializeSamples() {
+    this.pads.forEach((pad) => {
+      pad.howl = new Howl({
+        src: [`samples/${this.drumset}/${pad.dataset.sound}.wav`],
+      });
+    });
+  }
 
-    playSample({target: pad}) {
-        pad.howl.stop();
-        pad.howl.play();
-    }
+  addPadHooks = () => {
+    this.pads.forEach((pad) => {
+      const eventType =
+        "ontouchstart" in document.documentElement ? "touchstart" : "mousedown";
+      pad.addEventListener(eventType, this.playSample);
+    });
+  };
 
-    addKeyboardHooks() {
-        const keyToPadMap = {};
-        this.pads.forEach(pad => {
-            const {dataset: {key}} = pad;
-            if (!key) return;
-            keyToPadMap[key.toLowerCase()] = pad;
-        });
+  playSample = ({ target: pad }) => {
+    pad.howl.stop();
+    pad.howl.play();
+  };
 
-        window.addEventListener('keydown', e => {
-            if (e.repeat) return;
-            const pad = keyToPadMap[e.key.toLowerCase()];
-            if (!pad) return;
+  addKeyboardHooks() {
+    const keyToPadMap = {};
+    this.pads.forEach((pad) => {
+      const {
+        dataset: { key },
+      } = pad;
+      if (!key) return;
+      keyToPadMap[key.toLowerCase()] = pad;
+    });
 
-            pad.dispatchEvent(new Event('mousedown'));
-            pad.classList.add('active')
-        });
+    window.addEventListener("keydown", (e) => {
+      if (e.repeat) return;
+      const pad = keyToPadMap[e.key.toLowerCase()];
+      if (!pad) return;
 
-        window.addEventListener('keyup', e => {
-            const pad = keyToPadMap[e.key.toLowerCase()];
-            if (!pad) return;
+      pad.dispatchEvent(new Event("mousedown"));
+      pad.classList.add("active");
+    });
 
-            pad.classList.remove('active')
-        });
-    }
+    window.addEventListener("keyup", (e) => {
+      const pad = keyToPadMap[e.key.toLowerCase()];
+      if (!pad) return;
+
+      pad.classList.remove("active");
+    });
+  }
 }
-
-
-
