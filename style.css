@@ -1,19 +1,31 @@
+:root {
+    --bg-color: snow;
+    --pad-bg: silver;
+    --pad-active: tomato;
+    --text-color: darkslategray; /* Replaced #333 with darkslategray */
+    --machine-bg: indigo;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: black;            /* Replaced #121212 */
+        --pad-bg: #2a2a2a;            /* Replaced #2a2a2a */
+        --pad-active: crimson;         /* #ff6347 is tomato */
+        --text-color: white;          /* #ffffff is white */
+        --machine-bg: indigo;         /* #4b0082 is indigo */
+    }
+}
+
 body {
     display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: center;  
-    
-    background: snow;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-family: 'Passion One', cursive;
-
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    user-select: none; 
+    inset: 0;
+    user-select: none;
     touch-action: manipulation;
 }
 
@@ -23,39 +35,32 @@ section {
 
 section.pads {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
-    grid-gap: .1em;
-
+    gap: 0.1em;
     font-size: 5vmin;
-
     width: 100vmin;
     height: 100vmin;
 }
 
-
-
-section.pads .pad { 
-    position: relative;
-    background: silver;
-    color: snow;
-    transition: .3s ease-in;
-
+section.pads .pad {
     display: flex;
-    align-items: center; 
-    justify-content: center;  
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--pad-bg);
+    color: var(--text-color);
+    transition: background 0.3s ease-in, transform 0.3s ease-in;
 }
 
-section.pads div.pad:active,
-section.pads div.pad.active {
-    
-    background: tomato;
-
-    transition: .1s ease-out;
-} 
+section.pads .pad:active,
+section.pads .pad.active {
+    background: var(--pad-active);
+    transition-duration: 0.1s;
+}
 
 section.machine {
-    background: indigo;
-    align-self: stretch;
     display: none;
+    align-self: stretch;
+    background: var(--machine-bg);
 }
