@@ -1,61 +1,61 @@
-@import 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
-@import 'https://fonts.googleapis.com/css?family=Passion+One';
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@import "https://fonts.googleapis.com/css?family=Passion+One";
 
 :root {
-    --bg-color: snow;
-    --pad-bg: silver;
-    --pad-active: tomato;
-    --text-color: snow; /* Replaced #333 with darkslategray */
+  --bg-color: snow;
+  --pad-bg: rgba(13, 13, 13, 0.2);
+  --pad-active: tomato;
+  --text-color: rgba(255, 250, 250, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: black;            /* Replaced #121212 */
-        --pad-bg: #2a2a2a;            /* Replaced #2a2a2a */
-        --pad-active: crimson;         /* #ff6347 is tomato */
-        --text-color: black;          /* #ffffff is white */
-    }
+  :root {
+    --bg-color: #353839; /* Black Onyx Pantone color */
+    --pad-bg: rgba(255, 250, 250, 0.1);
+    --pad-active: crimson; 
+    --text-color: rgba(255, 250, 250, 0.1);
+  }
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Passion One', cursive;
-    position: absolute;
-    inset: 0;
-    user-select: none;
-    touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Passion One", cursive;
+  position: absolute;
+  inset: 0;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 section {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 section.pads {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 0.1em;
-    font-size: 5vmin;
-    width: 100vmin;
-    height: 100vmin;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 0.1em;
+  font-size: 5vmin;
+  width: 100vmin;
+  height: 100vmin;
 }
 
 section.pads .pad {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background: var(--pad-bg);
-    color: var(--text-color);
-    transition: background 0.3s ease-in, transform 0.3s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--pad-bg);
+  color: var(--text-color);
+  transition: background 0.3s ease-in, transform 0.3s ease-in;
 }
 
 section.pads .pad:active,
 section.pads .pad.active {
-    background: var(--pad-active);
-    transition-duration: 0.1s;
+  background: var(--pad-active);
+  transition-duration: 0.1s;
 }
