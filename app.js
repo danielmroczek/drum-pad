@@ -24,15 +24,57 @@ class DrumPad {
 
   addPadHooks = () => {
     this.pads.forEach((pad) => {
-      const eventType =
-        "ontouchstart" in document.documentElement ? "touchstart" : "mousedown";
-      pad.addEventListener(eventType, this.playSample);
+      pad.addEventListener("mousedown", this.playSample);
+      pad.addEventListener("touchstart", this.handleTouchStart);
+      pad.addEventListener("touchend", this.handleTouchEnd);
     });
   };
 
-  playSample = ({ target: pad }) => {
+  handleTouchStart = (event) => {
+    event.preventDefault();
+    const pad = event.target;
+    pad.classList.add("active");
+    
+    const touch = event.touches[0];
+    const rect = pad.getBoundingClientRect();
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    
+    this.playWithVelocity(pad, x, y);
+  };
+
+  handleTouchEnd = (event) => {
+    event.preventDefault();
+    const pad = event.target;
+    pad.classList.remove("active");
+  };
+
+  playWithVelocity = (pad, x, y) => {
+    const rect = pad.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const distance = Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
+    const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2);
+    const velocity = 1 - distance / maxDistance;
+
+    // Handle choke groups
+    const chokeGroup = pad.dataset.choke;
+    if (chokeGroup) {
+      this.pads.forEach(otherPad => {
+        if (otherPad !== pad && otherPad.dataset.choke === chokeGroup) {
+          otherPad.howl.stop();
+        }
+      });
+    }
+
+    pad.howl.volume(velocity);
     pad.howl.stop();
     pad.howl.play();
+  };
+
+  playSample = (event) => {
+    const pad = event.target;
+    this.playWithVelocity(pad, event.clientX - pad.getBoundingClientRect().left, event.clientY - pad.getBoundingClientRect().top);
   };
 
   addKeyboardHooks() {
