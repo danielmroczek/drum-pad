@@ -6,6 +6,7 @@
   --pad-bg: rgba(13, 13, 13, 0.2);
   --pad-active: tomato;
   --text-color: rgba(255, 250, 250, 0.5);
+  --velocity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,10 +53,15 @@ section.pads .pad {
   background: var(--pad-bg);
   color: var(--text-color);
   transition: background 0.3s ease-in, transform 0.3s ease-in;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  --velocity: 1;
 }
 
 section.pads .pad:active,
 section.pads .pad.active {
   background: var(--pad-active);
+  transform: scale(0.95);
   transition-duration: 0.1s;
+  --velocity: 1;
 }
