@@ -40,10 +40,10 @@ section.pads {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   grid-template-areas: 
-    "crash cowb ride"
-    "lotom midtom hitom"
-    "clap sst ohh"
-    "kick sd chh";
+    "cy cb sp"
+    "lt mt ht"
+    "cp rs oh"
+    "bd sd ch";
   gap: 0.1em;
   font-size: 5vmin;
   width: min(100vw, 75vh);
@@ -56,9 +56,9 @@ section.pads {
   section.pads {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-      "lotom midtom hitom ride"
-      "clap sst ohh cowb"
-      "kick sd chh crash";
+      "lt mt ht sp"
+      "cp rs oh cb"
+      "bd sd ch cy";
     height: min(100vh, 75vw);
     width: calc(min(100vh, 75vw) * 4/3);
     max-width: 100vw;
@@ -88,15 +88,15 @@ section.pads .pad.active {
   --velocity: 1;
 }
 
-section.pads .pad[data-sound="cowb"] { grid-area: cowb; }
-section.pads .pad[data-sound="crash"] { grid-area: crash; }
-section.pads .pad[data-sound="ride"] { grid-area: ride; }
-section.pads .pad[data-sound="lotom"] { grid-area: lotom; }
-section.pads .pad[data-sound="midtom"] { grid-area: midtom; }
-section.pads .pad[data-sound="hitom"] { grid-area: hitom; }
-section.pads .pad[data-sound="chh"] { grid-area: chh; }
-section.pads .pad[data-sound="ohh"] { grid-area: ohh; }
-section.pads .pad[data-sound="sst"] { grid-area: sst; }
-section.pads .pad[data-sound="kick"] { grid-area: kick; }
+section.pads .pad[data-sound="cb"] { grid-area: cb; }
+section.pads .pad[data-sound="cy"] { grid-area: cy; }
+section.pads .pad[data-sound="sp"] { grid-area: sp; }
+section.pads .pad[data-sound="lt"] { grid-area: lt; }
+section.pads .pad[data-sound="mt"] { grid-area: mt; }
+section.pads .pad[data-sound="ht"] { grid-area: ht; }
+section.pads .pad[data-sound="ch"] { grid-area: ch; }
+section.pads .pad[data-sound="oh"] { grid-area: oh; }
+section.pads .pad[data-sound="rs"] { grid-area: rs; }
+section.pads .pad[data-sound="bd"] { grid-area: bd; }
 section.pads .pad[data-sound="sd"] { grid-area: sd; }
-section.pads .pad[data-sound="clap"] { grid-area: clap; }
+section.pads .pad[data-sound="cp"] { grid-area: cp; }
