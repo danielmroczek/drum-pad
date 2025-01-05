@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    :root {
+      --pad-color: #B0B0B0;
+      --pad-hover-color: #FF6600;
+      --bg-color: #E5E5DA;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --pad-color: #795548;
+        --pad-hover-color: #ff6f00;
+        --bg-color:#212121;
+      }
+    }
+    .pad { fill: var(--pad-color); rx: 1.5; }
+    .pad:hover { fill: var(--pad-hover-color); }
+  </style>
+  <rect style="fill:var(--bg-color)" width="32" height="32" rx="4"/>
+  <!-- <rect class="pad" x="4" y="4" width="10" height="10" rx="2"/>
+  <rect class="pad" x="18" y="4" width="10" height="10" rx="2"/>
+  <rect class="pad" x="4" y="18" width="10" height="10" rx="2"/>
+  <rect class="pad" x="18" y="18" width="10" height="10" rx="2"/> -->
+
+    <rect class="pad" x="3" y="3" width="7" height="7"/>
+  <rect class="pad" x="12.5" y="3" width="7" height="7"/>
+  <rect class="pad" x="22" y="3" width="7" height="7"/>
+  <rect class="pad" x="3" y="12.5" width="7" height="7"/>
+  <rect class="pad" x="12.5" y="12.5" width="7" height="7"/>
+  <rect class="pad" x="22" y="12.5" width="7" height="7"/>
+  <rect class="pad" x="3" y="22" width="7" height="7"/>
+  <rect class="pad" x="12.5" y="22" width="7" height="7"/>
+  <rect class="pad" x="22" y="22" width="7" height="7"/>
+</svg>
