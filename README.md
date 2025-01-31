@@ -1,19 +1,26 @@
 # 🥁 Online Drumpad
 
-An interactive online drumpad that lets you play beats using your keyboard or touch controls. Perfect for music enthusiasts and aspiring drummers.</p>
+An interactive online drumpad that lets you play beats using your keyboard or touch controls. Perfect for music enthusiasts and aspiring drummers.
 
 ## 🔗 Live Demo
 
 Try it now: [Online Drumpad](https://danielmroczek.github.io/drumpad/)
 
+## 📖 Project Origin
+
+Before I started playing guitar, I dreamed of playing the drums. Unfortunately, this instrument didn't meet with approval from other household members. However, I managed to convince my parents to buy me a bass guitar instead, which worked out well for me.
+
+Many years have passed, I still don't have drums and probably never will. But the desire to learn at least basic drumming skills remained. What if I could practice finger-drumming on my phone? That's how the idea for this app was born.
+
+I know there are many similar applications, but I wanted something simple that could run on any phone (and computer) without installation. The tool is ready, now it's time to practice!
+
 ## 🎯 Features
 
-- 🎵 16 high-quality drum samples
-- ⌨️ Keyboard mapping for quick access
+- 🎵 12 high-quality drum samples
 - 📱 Touch-enabled for mobile devices
-- ⚡ Low latency playback
-- 📱 Responsive design
+- ⌨️ Keyboard mapping for quick access
 - 🖱️ Mouse and touch support
+- 🔊 Velocity sensitive controls (the closer the center, the louder)
 - 🎨 Clean, minimalist interface
 - 🌓 Dark/Light theme support
 
@@ -33,20 +40,20 @@ Try it now: [Online Drumpad](https://danielmroczek.github.io/drumpad/)
 
 ## ⌨️ Keyboard Controls
 
-| Key         | Alternative Key | Sound     |
-|-------------|----------------|-----------|
-| 1           | V             | Crash     |
-| 2           | F             | Cowbell   |
-| 3           | R             | Ride      |
-| Q           |               | Low Tom   |
-| W           |               | Mid Tom   |
-| E           |               | High Tom  |
-| C           |               | Closed HH |
-| D           |               | Open HH   |
-| Z           |               | Kick      |
-| S           |               | Rim       |
-| X           |               | Snare     |
-| A           |               | Clap      |
+| Key     | Sound     |
+|---------|-----------|
+| 1, V    | Crash     |
+| 2, F    | Cowbell   |
+| 3, R    | Ride      |
+| Q       | Low Tom   |
+| W       | Mid Tom   |
+| E       | High Tom  |
+| C       | Closed HH |
+| D       | Open HH   |
+| Z       | Kick      |
+| S       | Rim       |
+| X       | Snare     |
+| A       | Clap      |
 
 This 3x4 grid layout adjusts to a 4x3 layout when the screen is wider than it is tall.
 
