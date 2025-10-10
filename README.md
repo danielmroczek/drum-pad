@@ -1,10 +1,10 @@
-# 🥁 Online Drumpad
+# 🥁 Drum-pad
 
 An interactive online drumpad that lets you play beats using your keyboard or touch controls. Perfect for music enthusiasts and aspiring drummers.
 
 ## 🔗 Live Demo
 
-Try it now: [Online Drumpad](https://danielmroczek.github.io/drumpad/)
+Try it now: [Online Drum-pad](https://danielmroczek.github.io/drum-pad/)
 
 ## 📖 Project Origin
 
@@ -59,7 +59,7 @@ This 3x4 grid layout adjusts to a 4x3 layout when the screen is wider than it is
 
 ## 📝 Note
 
-This drumpad uses the LM1 drum sample pack. All samples are included in the repository.
+This drum-pad uses the LM1 drum sample pack. All samples are included in the repository.
 
 ## 📄 License
 
