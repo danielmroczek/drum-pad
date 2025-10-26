@@ -11,19 +11,16 @@
     <title>Drum-pad - Virtual Drum Machine</title>
 </head>
 <body>
-    <section class="pads">
-        <div class="pad" data-sound="cy" data-key="1,v" data-choke="2">Crash</div>
-        <div class="pad" data-sound="cb" data-key="2,f">Cowbell</div>
-        <div class="pad" data-sound="sp" data-key="3,r" data-choke="2">Ride</div>
-        <div class="pad" data-sound="lt" data-key="q">Low Tom</div>
-        <div class="pad" data-sound="mt" data-key="w">Mid Tom</div>
-        <div class="pad" data-sound="ht" data-key="e">High Tom</div>
-        <div class="pad" data-sound="ch" data-key="c" data-choke="1">CH</div>
-        <div class="pad" data-sound="oh" data-key="d" data-choke="1">OH</div>
-        <div class="pad" data-sound="bd" data-key="z">Kick</div>
-        <div class="pad" data-sound="rs" data-key="s">Rim</div>
-        <div class="pad" data-sound="sd" data-key="x">Snare</div>
-        <div class="pad" data-sound="cp" data-key="a">Clap</div>
+    <section class="pads" x-data="drumPad">
+        <template x-for="pad in pads" :key="pad.sound">
+            <div class="pad" 
+                 :class="{ 'active': activePads.has(pad.sound) }"
+                 @mousedown="playSample($event, pad.sound)"
+                 @touchstart.prevent="handleTouchStart($event, pad.sound)"
+                 @touchend.prevent="handleTouchEnd($event, pad.sound)"
+                 :data-sound="pad.sound"
+                 x-text="pad.label"></div>
+        </template>
     </section>
 </body>
 </html>

@@ -26,7 +26,7 @@ I know there are many similar applications, but I wanted something simple that c
 
 ## 🛠️ Tech Stack
 
-- Pure JavaScript (ES6+)
+- Alpine.js for reactive UI
 - Howler.js for audio processing
 - HTML5 Audio API
 - CSS3 Grid Layout
